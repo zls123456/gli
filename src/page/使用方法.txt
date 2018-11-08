@@ -1,0 +1,15 @@
+public String test() {
+	// 分页
+	int total = 10; //总记录数
+	int size = 1; //每页记录数
+	int step = 7; //最多显示分页页数
+	int p1 = StringUtil.toInt(request.getParameter("p1")); //当前页数
+	int p2 = StringUtil.toInt(request.getParameter("p2")); //当前页数
+	int p3 = StringUtil.toInt(request.getParameter("p3")); //当前页数
+	int p4 = StringUtil.toInt(request.getParameter("p4")); //当前页数
+	
+	return Pager.getSimplePages(total, size, step, p1, request, "p1") + "\n\n<br/><br/>\n\n" + 
+	Pager.getSimplePages(total, size, step, p2, request, "p2") + "\n\n<br/><br/>\n\n" + 
+	Pager.getSimplePages(total, size, step, p3, request, "p3") + "\n\n<br/><br/>\n\n" + 
+	Pager.getSimplePages(total, size, step, p4, request, "p4");
+}
